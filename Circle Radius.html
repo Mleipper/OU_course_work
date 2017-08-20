@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Circumference calculator </title>
+ 
+    </head>
+
+    <body>
+        <div id="play-area">
+            
+                    
+                    <p id="type">please input the Radius</p>
+                    <input type ="number" id="number" value ="0" min="0"><br>
+                    <p>select radius or diameter </p>
+                    <select id="inputType" onchange ="getSelected()">
+                        <option value = "Radius" > Radius</option>
+                        <option value="Diameter"> Diameter</option>
+                    </select><br>
+                    <button onclick= "myFuntion()" >calculate</button>
+                   
+               
+                <p id= "result"></p>
+                  <script>
+                      function getSelected()
+                      {
+                          var input = document.getElementById("inputType").value;
+                          
+                              document.getElementById("type").innerHTML = "please input the " + input;
+                          
+                        
+                      }
+                      
+                      function myFuntion()
+                      {
+                          var number = document.getElementById("number").value;
+                          var inputType = document.getElementById("inputType").value;
+                          var result = 0;
+                          if (inputType == "Radius")
+                              {
+                                  result = (number * 2* Math.PI);
+                              }
+                          else
+                              {
+                                  result = (number * Math.PI);
+                              }
+                          document.getElementById("result").innerHTML = result;
+        
+                      }
+    
+                </script>
+            
+        </div>
+    </body>
+</html>
